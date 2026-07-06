@@ -120,7 +120,7 @@ class FuncMageDataGenerator:
         return random.sample(items, min(count, len(items)))
 
     @classmethod
-    def print_exercise_data(cls, exercise_num: int):
+    def print_exercise_data(cls, exercise_num: int) -> None:
         """Print formatted test data for a specific exercise."""
         print(f"=== Exercise {exercise_num} Test Data ===")
 
@@ -172,7 +172,7 @@ class FuncMageDataGenerator:
         print()
 
 
-def main():
+def main() -> None:
     """Interactive data generator for FuncMage Chronicles."""
     print("🧙‍♀️ FuncMage Chronicles - Data Generator Helper 🧙‍♂️")
     print("=" * 50)

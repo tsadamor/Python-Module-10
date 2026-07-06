@@ -1,12 +1,17 @@
 #!/usr/bin/env python3
 
-def artifact_sorter(artifacts: list[dict]) -> list[dict]:
+from typing import Any
+
+
+def artifact_sorter(artifacts: list[dict[str, Any]]) -> list[dict[str, Any]]:
     return sorted(
             artifacts, key=lambda artifact: artifact["power"], reverse=True
             )
 
 
-def power_filter(mages: list[dict], min_power: int) -> list[dict]:
+def power_filter(
+        mages: list[dict[str, Any]], min_power: int
+        ) -> list[dict[str, Any]]:
     return list(
             filter(lambda mage: mage["power"] >= min_power, mages)
             )
@@ -18,7 +23,7 @@ def spell_transformer(spells: list[str]) -> list[str]:
             )
 
 
-def mage_stats(mages: list[dict]) -> dict:
+def mage_stats(mages: list[dict[str, Any]]) -> dict[str, Any]:
     return {
             "max_power": max(mages, key=lambda mage: mage["power"])["power"],
             "min_power": min(mages, key=lambda mage: mage["power"])["power"],
