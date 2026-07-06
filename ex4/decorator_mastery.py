@@ -50,3 +50,14 @@ def retry_spell(max_attempts: int) -> Callable:
         return wrapper
     return recite
 
+
+class MageGuild:
+    @staticmethod
+    def validate_mage_name(name: str) -> bool:
+        return len(name) >= 3 and all(c.isalpha() or c.isspace() for c in name)
+
+    @power_validator(10)
+    def cast_spell(self, spell_name: str, power: int) -> str:
+        print(f"Successfully cast spell_name with {power} power")
+
+
