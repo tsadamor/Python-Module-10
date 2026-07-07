@@ -19,7 +19,9 @@ def spell_timer(func: Callable[..., Any]) -> Callable[..., Any]:
     return time_execution
 
 
-def power_validator(min_power: int) -> Callable[[Callable[..., Any]], Callable[..., Any]]:
+def power_validator(
+        min_power: int
+        ) -> Callable[[Callable[..., Any]], Callable[..., Any]]:
     def validate_power(func: Callable[..., Any]) -> Callable[..., Any]:
         @functools.wraps(func)
         def wrapper(*args: Any, **kwargs: Any) -> Any:
@@ -38,7 +40,9 @@ def power_validator(min_power: int) -> Callable[[Callable[..., Any]], Callable[.
     return validate_power
 
 
-def retry_spell(max_attempts: int) -> Callable[[Callable[..., Any]], Callable[..., Any]]:
+def retry_spell(
+        max_attempts: int
+        ) -> Callable[[Callable[..., Any]], Callable[..., Any]]:
     def recite(func: Callable[..., Any]) -> Callable[..., Any]:
         @functools.wraps(func)
         def wrapper(*args: Any, **kwargs: Any) -> Any:

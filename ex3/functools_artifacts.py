@@ -23,7 +23,9 @@ def spell_reducer(spells: list[int], operation: str) -> int:
         raise ValueError(f"Unknown operation: {operation}")
 
 
-def partial_enchanter(base_enchantment: Callable[..., str]) -> dict[str, Callable[..., str]]:
+def partial_enchanter(
+        base_enchantment: Callable[..., str]
+        ) -> dict[str, Callable[..., str]]:
     fire_enchanter = functools.partial(
             base_enchantment, power=50, element="fire"
             )
